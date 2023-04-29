@@ -45,22 +45,7 @@ const AllCountries = () => {
     }
   };
 
-  const getCountryByRegion = async (regionName) => {
-    try {
-      const res = await fetch(`${apiURL}/region/${regionName}`);
-
-      if (!res.ok) throw new Error("Failed..........");
-
-      const data = await res.json();
-      setCountries(data);
-
-      setIsLoading(false);
-    } catch (error) {
-      setIsLoading(false);
-      setError(false);
-    }
-  };
-
+  
   useEffect(() => {
     getAllCountries();
   }, []);
