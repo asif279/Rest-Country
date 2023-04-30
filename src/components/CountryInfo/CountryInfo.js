@@ -33,7 +33,7 @@ const CountryInfo = () => {
   }, [countryName]);
 
   return (
-    <div className="country__info__wrapper">
+    <div className="country__info__wrapper col-sm-1 col-md-2">
       <button>
         <Link to="/">Back</Link>
       </button>

@@ -51,7 +51,7 @@ const AllCountries = () => {
   }, []);
 
   return (
-    <div className="all__country__wrapper">
+    <div className="all__country__wrapper col-sm-1 col-md-2">
       <div className="country__top">
         <div className="search">
           <SearchInput onSearch={getCountryByName} />
@@ -59,11 +59,12 @@ const AllCountries = () => {
 </div>
 
       <div className="country__bottom">
-        {isLoading && !error && <h4>Loading........</h4>}
+        {isLoading && !error && <h4>Loading..</h4>}
         {error && !isLoading && <h4>{error}</h4>}
 
         {countries?.map((country) => (
-          <Link to={`/country/${country.name.common}`}>
+          <div>
+        
             <div className="country__card">
               <div className="country__img">
                 <img src={country.flags.png} alt="" />
@@ -80,7 +81,14 @@ const AllCountries = () => {
                 <h6>Capital: {country.capital}</h6>
               </div>
             </div>
+              <Link to={`/country/${country.name.common}`}>
+
+             <button>Show Detailes</button>
+          
           </Link>
+         
+         
+          </div>
         ))}
       </div>
     </div>
